@@ -1,0 +1,19 @@
+<div ng-app="app">
+  {{ 1 + 1 }}
+
+  <div ng-controller="stuffCtrl">
+    <h2>Angular Reviews</h2>
+
+    <div ng-repeat="review in reviews track by $index" ng-hide="isPositive(review)" ng-click="deleteReview($index)">
+      <h2>{{ review.reviewer }} - {{ review.rating }} stars</h2>
+      <p>{{ review.text }}</p>
+    </div>
+
+    <input ng-model="newReviewText" placeholder="Text">
+    <input ng-model="newReviewRating" placeholder="Rating">
+    <input ng-model="newReviewReviewer" placeholder="Reviewer">
+    <button ng-click="addReview(newReviewText, newReviewRating, newReviewReviewer)">Add Review</button>
+  </div>
+</div>
+
+
